@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://santorgeorconle.github.io/pc-zgjcw-com/sitemap.xml

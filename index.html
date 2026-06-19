@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于中国竞彩网 · 信息页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f4f6fa;
+      color: #1f2a3f;
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* -------- 深色头图 -------- */
+    .hero {
+      background: linear-gradient(145deg, #0e1a2f 0%, #1c2d4a 100%);
+      padding: 60px 20px 50px;
+      margin: 0 -20px 32px;
+      border-radius: 0 0 48px 48px;
+      text-align: center;
+      color: #e9edf5;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      color: #f7c948;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.85;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      margin-top: 24px;
+      background: rgba(247, 201, 72, 0.15);
+      border: 1px solid rgba(247, 201, 72, 0.35);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.88rem;
+      color: #f7c948;
+    }
+
+    /* -------- 卡片网格 -------- */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 36px 0 40px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px 22px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s;
+      border: 1px solid #ebeff5;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 28px rgba(0, 20, 50, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #e7ecf6;
+      color: #1f2a3f;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #0b1a33;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #3f4b61;
+      margin-bottom: 6px;
+    }
+
+    .card .small-note {
+      font-size: 0.85rem;
+      color: #6b7a92;
+      margin-top: 10px;
+      border-top: 1px solid #edf2f9;
+      padding-top: 12px;
+    }
+
+    /* -------- 场景 / 适合人群双栏 -------- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 40px 0 30px;
+    }
+
+    @media (max-width: 680px) {
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .col-box {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px 24px;
+      border: 1px solid #e3e9f2;
+    }
+
+    .col-box h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .col-box ul li {
+      position: relative;
+      padding: 6px 0 6px 22px;
+      font-size: 0.95rem;
+      color: #2f3a50;
+    }
+
+    .col-box ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #3d6ef5;
+      font-weight: bold;
+    }
+
+    /* -------- 自然链接段落 + 提示 -------- */
+    .link-section {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 30px 28px;
+      margin: 28px 0 30px;
+      border: 1px solid #e3e9f2;
+    }
+
+    .link-section p {
+      font-size: 0.98rem;
+      color: #253143;
+      margin-bottom: 14px;
+    }
+
+    .link-section p:last-child {
+      margin-bottom: 0;
+    }
+
+    .link-section a {
+      color: #2b5ce6;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border 0.15s, color 0.15s;
+    }
+
+    .link-section a:hover {
+      color: #1644c0;
+      border-bottom: 1px solid #1644c0;
+    }
+
+    .highlight-box {
+      background: #f0f5ff;
+      border-left: 4px solid #2b5ce6;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 24px 0 16px;
+      font-size: 0.93rem;
+      color: #1a263b;
+    }
+
+    .highlight-box strong {
+      color: #0a1d3b;
+    }
+
+    /* -------- FAQ 摘要 -------- */
+    .faq-mini {
+      margin: 30px 0 20px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 24px 26px;
+      border: 1px solid #e3e9f2;
+    }
+
+    .faq-mini h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .faq-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #edf2f9;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item .q {
+      font-weight: 600;
+      color: #0b1a33;
+      font-size: 0.96rem;
+    }
+
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #4b5a72;
+      margin-top: 4px;
+    }
+
+    /* -------- 页脚 -------- */
+    .footer-note {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #78879e;
+      border-top: 1px solid #dce3ed;
+      padding-top: 28px;
+    }
+
+    .footer-note a {
+      color: #2b5ce6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+      .card {
+        padding: 22px 16px;
+      }
+      .link-section, .faq-mini, .col-box {
+        padding: 22px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 深色头图 -->
+    <div class="hero">
+      <h1>再次遇见 · <span>中国竞彩网</span></h1>
+      <p>一份关于持续关注、收藏与重新发现的简明指引</p>
+      <span class="badge">🧭 重新访问 · 收藏 · 稳定信息</span>
+    </div>
+
+    <!-- 信息卡片区：主视觉 + 用途 + 适合人群 -->
+    <div class="grid-3">
+      <div class="card">
+        <div class="icon">🖥️</div>
+        <h3>主视觉 · 信息窗</h3>
+        <p>以清晰的数据看板、赛事陈列和分类导航为主，适合快速浏览与持续跟进。</p>
+        <div class="small-note">页面结构稳定，便于再次定位常用功能。</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">🧩</div>
+        <h3>多用途卡片</h3>
+        <p>从赛程查询、数据对比到专题汇总，每一项都可以独立使用，也支持组合查阅。</p>
+        <div class="small-note">一次收藏，多次复用。</div>
+      </div>
+
+      <div class="card">
+        <div class="icon">👥</div>
+        <h3>适合这些朋友</h3>
+        <p>习惯用网页整理信息的人、需要定期回顾赛况的爱好者、以及想要一个可靠常访问地址的读者。</p>
+        <div class="small-note">不用反复搜索，一个标签页就能回来。</div>
+      </div>
+    </div>
+
+    <!-- 双栏：场景 + 人群 -->
+    <div class="two-col">
+      <div class="col-box">
+        <h3>📌 适合场景</h3>
+        <ul>
+          <li>固定设备上保留标签页，日常快速打开</li>
+          <li>整理赛程与结果时，作为对照参考</li>
+          <li>回顾往期数据，进行简单的趋势观察</li>
+          <li>与其他信息源交叉验证，保持信息全面</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <h3>🎯 持续关注的理由</h3>
+        <ul>
+          <li>信息聚合清晰，不依赖推送或广告</li>
+          <li>分类逻辑一致，再次访问总能找到之前的位置</li>
+          <li>适合配合浏览器书签或收藏夹使用</li>
+          <li>页面风格克制，不干扰阅读节奏</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 -->
+    <div class="link-section">
+      <p>如果你是第一次到达这里，或者想要重新整理自己的信息入口，值得把 <a href="https://pc-zgjcw.com">中国竞彩网</a> 加入书签。它的内容组织方式偏向工具属性，适合反复回来查阅，而不只是浏览一次。</p>
+
+      <p>很多朋友习惯在每周固定时间打开同一个页面，更新自己的记录。如果你也需要一个稳定的信息起点，不妨试试把 <a href="https://pc-zgjcw.com">中国竞彩网</a> 放在常用标签组里。页面结构经过多次调整，目前已经比较成熟，不太会出现大幅改动导致找不到内容的情况。</p>
+
+      <p>另外，如果你有整理笔记或自行记录的习惯，可以把它作为对照源。它的数据更新节奏比较规律，适合与其他来源相互印证。</p>
+
+      <!-- 提示块 -->
+      <div class="highlight-box">
+        <strong>💡 保持访问 · 小建议</strong><br>
+        建议至少每 2–3 天打开一次，以便熟悉界面变化和新的分类位置。如果间隔时间较长，可以先用导航栏快速回顾整体结构。
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>❓ 常见疑问摘要</h3>
+      <div class="faq-item">
+        <div class="q">是否需要注册或登录才能看到主要内容？</div>
+        <div class="a">大多数信息可以直接访问，不需要额外注册。部分个性化功能可能需要账号，但日常浏览不受影响。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">页面打开后内容很久没有变化，是正常的吗？</div>
+        <div class="a">某些板块只在特定时间更新（例如赛前或赛后），平时会保持稳定显示，属于正常情况。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">适合用手机浏览器打开吗？</div>
+        <div class="a">页面经过响应式适配，手机端阅读体验良好，也支持添加到主屏幕作为快捷方式。</div>
+      </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+      <p>信息整理 · <a href="https://pc-zgjcw.com">中国竞彩网</a> &nbsp;|&nbsp; 内容基于公开页面结构与实际使用体验汇总</p>
+      <p style="margin-top: 8px; opacity: 0.65;">本页为独立介绍页，仅供参考与导航说明</p>
+    </div>
+  </div>
+</body>
+</html>
